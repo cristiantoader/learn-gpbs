@@ -11,13 +11,23 @@
 
     <artifactId>gpb-demo-app</artifactId>
 
+    <properties>
+        <lombok.version>1.18.10</lombok.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.ctoader.learn</groupId>
             <artifactId>gpb-model</artifactId>
             <version>${project.version}</version>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
+    </dependencies>
 
 </project>
