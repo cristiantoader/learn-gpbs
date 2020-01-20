@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "com.ctoader.learn";
+option java_outer_classname = "Professions";
+
+message CarpenterDetails {
+    int64 id = 1;
+    string name = 2;
+    string details = 3;
+}
+
+message PainterDetails {
+    int64 id = 1;
+    string name = 2;
+    repeated string paintins = 3;
+}

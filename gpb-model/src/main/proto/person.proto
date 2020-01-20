@@ -1,6 +1,9 @@
 syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/any.proto";
+import "address.proto";
+import "professions.proto";
 
 option java_package = "com.ctoader.learn";
 option java_outer_classname = "PersonWrapper";
@@ -9,4 +12,37 @@ message Person {
     int64 id = 1;
     string name = 2;
     google.protobuf.Timestamp birthday = 3;
+    Gender gender = 4;
+
+    // removed
+    reserved 5, 6, 7;
+
+    Address address = 8;
+    repeated Address address_history = 9;
+
+    Description description_details = 10;
+
+    google.protobuf.Any original_file_upload = 11;
+
+    // also has same parent enumeration
+    oneof profession_details {
+        CarpenterDetails carpenter_details = 12;
+        PainterDetails painter_details = 13;
+    }
+
+    message Description {
+        string short_description = 1;
+        repeated string tags = 2;
+        string description = 3;
+    }
+
+    enum Gender {
+        option allow_alias = true;
+
+        FEMALE = 0;
+//        reserved 2, 3;
+        MALE = 1;
+        OTHER = 2;
+        UNKNOWN = 2;
+    }
 }

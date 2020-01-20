@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+// 'public' becomes a transitive dependency for importers
+import public "locations.proto";
+
+option java_package = "com.ctoader.learn";
+option java_outer_classname = "AddressWrapper";
+
+message Address {
+    int64 id = 1;
+    string street = 2;
+    int32 number = 3;
+    string city = 4;
+    reserved 5, 6, 7; // removed fields
+    string country = 8;
+    Geolocation location = 9;
+}
+
+
+

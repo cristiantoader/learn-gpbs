@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "com.ctoader.learn";
+option java_outer_classname = "Locations";
+
+message Geolocation {
+    int64 longitude = 1;
+    int64 latitude = 2;
+}
